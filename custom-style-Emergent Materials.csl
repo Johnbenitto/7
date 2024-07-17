@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/net/xbiblio/csl ../csl.rnc" version="1.0">
+  <info>
+    <title>Custom Style</title>
+    <id>http://www.zotero.org/styles/custom-style</id>
+    <link href="http://www.zotero.org/styles/custom-style" rel="self"/>
+    <author>
+      <name>Your Name</name>
+    </author>
+    <category citation-format="author-date"/>
+    <updated>2024-07-17T00:00:00Z</updated>
+  </info>
+  <locale xml:lang="en">
+    <terms>
+      <term name="accessed">accessed</term>
+    </terms>
+  </locale>
+  <macro name="author">
+    <names variable="author">
+      <name and="symbol" sort-separator=", " delimiter=", " initialize-with=". " name-as-sort-order="first"/>
+    </names>
+  </macro>
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+  <macro name="title">
+    <text variable="title"/>
+  </macro>
+  <macro name="container-title">
+    <text variable="container-title"/>
+  </macro>
+  <macro name="volume-issue">
+    <group delimiter=" ">
+      <text variable="volume" font-weight="bold"/>
+      <text prefix="(" suffix=")" variable="issue"/>
+    </group>
+  </macro>
+  <macro name="page">
+    <text variable="page"/>
+  </macro>
+  <citation>
+    <layout prefix="" suffix="">
+      <group delimiter=", ">
+        <text macro="author"/>
+        <text macro="issued"/>
+      </group>
+    </layout>
+  </citation>
+  <bibliography>
+    <layout suffix=".">
+      <group delimiter=". ">
+        <text macro="author"/>
+        <text macro="title" suffix=". "/>
+        <text macro="container-title"/>
+        <group delimiter=", ">
+          <text macro="volume-issue"/>
+          <text macro="page"/>
+        </group>
+        <text macro="issued" prefix=" (" suffix=")"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>
